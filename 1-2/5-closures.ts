@@ -8,7 +8,7 @@ function createLogger(target) {
 }
 
 const myLog = createLogger("DEBUG");
-myLog("Testing"); // DEBUG::Testing
+myLog("Testing"); // -> DEBUG::Testing
 
 
 
@@ -33,11 +33,12 @@ const createCounter = createCreateCounter();
 
 const myCounter1 = createCounter();
 const myCounter2 = createCounter();
-console.log(myCounter1()); // 0
-console.log(myCounter2()); // 1
-console.log(myCounter1()); // 2
+console.log(myCounter1 == myCounter2); // -> false
+console.log(myCounter1()); // -> 0
+console.log(myCounter2()); // -> 1
+console.log(myCounter1()); // -> 2
 
 
 const createCounter2 = createCreateCounter();
 const myCounter3 = createCounter2();
-console.log(myCounter3()); // ??
+console.log(myCounter3()); // -> ???

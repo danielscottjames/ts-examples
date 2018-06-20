@@ -31,12 +31,8 @@ const normalLogger = factory.createLoggerFunction("Normal");
 const fatLogger = factory.createLoggerFatFunction("Fat");
 
 const messages = ["I", "am", "fat?"];
-// messages.forEach(normalLogger);
-// Uncaught TypeError: this.getFactoryName is not a function
+// messages.forEach(normalLogger); // Uncaught TypeError: this.getFactoryName is not a function
 
-
-// You can bind a `this` value to a function
-messages.forEach(normalLogger.bind(factory))
 
 // Or you can just use fat arrow functions
 messages.forEach(fatLogger);

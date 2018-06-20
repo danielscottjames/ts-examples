@@ -8,12 +8,23 @@ class MyClass {
     }
 
     public whoAmI() {
-        // Example of Template String Literals
         return `${this.firstName} ${this.lastName}`;
     }
 }
 
 const myObject = new MyClass("Daniel", "James");
-const myName = myObject.whoAmI();
+console.log(myObject.whoAmI()); // -> Daniel JAMES
 
-console.log(myName); // Daniel JAMES
+
+
+
+// Classes used to not be as easy...
+function MyOldStyleClass(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName.toUpperCase();
+}
+MyOldStyleClass.prototype.whoAmI = function() {
+    return `${this.firstName} ${this.lastName}`;
+}
+const myObject2 = new MyOldStyleClass("Daniel", "James");
+console.log(myObject2.whoAmI()); // -> Daniel JAMES

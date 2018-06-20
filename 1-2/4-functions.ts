@@ -2,7 +2,7 @@
  * Declare a function that takes a number and returns a boolean
  * Note, the return value is inferred and can be left off.
  */
-function isEven(item: number): boolean {
+function isEven(item) {
     return item % 2 === 0;
 }
 
@@ -10,7 +10,7 @@ function isEven(item: number): boolean {
  * Returns a new array containing the elements of `arrayToFilter`,
  * such that each item in the returned array passes the predicate `f`
  */
-function filter(arrayToFilter: any[], predicate: Function) {
+function filter(arrayToFilter, predicate) {
     const ret = [];
     for (let i = 0; i < arrayToFilter.length; i++) {
         if (predicate(arrayToFilter[i])) {
@@ -25,7 +25,7 @@ function filter(arrayToFilter: any[], predicate: Function) {
 const filtered1 = filter([1, 2, 3], isEven);
 
 // Assign an anonymous function to a variable, to use later
-const isOdd = function (item: number) {
+const isOdd = function (item) {
     return !isEven(item);
 };
 
@@ -36,6 +36,6 @@ const filtered3 = filter([1,2,3], function(item) {
     return item < 3;
 });
 
-console.log(filtered1); // [ 2 ]
-console.log(filtered2); // [ 1, 3 ]
-console.log(filtered3); // [ 1, 2 ]
+console.log(filtered1); // -> [ 2 ]
+console.log(filtered2); // -> [ 1, 3 ]
+console.log(filtered3); // -> [ 1, 2 ]
