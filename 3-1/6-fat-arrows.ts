@@ -24,6 +24,14 @@ class LoggerFactory {
             console.log(`${this.getPrefix()}::${scope}::${message}`);
         }
     }
+
+    thisType() {
+        // We can use the `this:` type syntax for regular functions
+        // to hint to the type system what we expect this to be.
+        return function (this: LoggerFactory, message) {
+            console.log(this);
+        }.bind(this)
+    }
 }
 
 const factory = new LoggerFactory();

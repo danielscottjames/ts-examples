@@ -1,17 +1,22 @@
 function whatIsThis() {
-    console.log("this is ", this);
+    console.log("this is ", this.toString());
 }
 
-whatIsThis(); // -> this is ???
+whatIsThis(); // -> this is [object global]
+// Would be Window in a browser.
+// Would be undefined and throw an error in `use strict` mode;
 
-const obj = {
+const testObj = {
+    toString() {
+        return "testObj";
+    },
     run1: whatIsThis,
     run2: () => {
         whatIsThis();
     }
 }
-obj.run1(); // -> this is ???
-obj.run2(); // -> this is ???
+testObj.run1(); // -> this is ???
+testObj.run2(); // -> this is ???
 
 
 
