@@ -38,7 +38,7 @@ const testObj = {
     },
     run1: () => { // What if we use a regular function?
         console.log(this.toString());
-        whatIsThis();
+        return whatIsThis();
     },
     run2: whatIsThis,
 }
